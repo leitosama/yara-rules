@@ -11,5 +11,5 @@ rule ngrok_binaries {
     $s4 = "ngrokService"
     $s5 = "HTTPRoundTrip_KeyVal"
   condition:
-   (3 of ($s*))
+   filesize > 40MB and filesize < 80MB and (3 of ($s*))
 }
